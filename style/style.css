@@ -1,0 +1,31 @@
+.galeria {
+    display: flex; /*Establece el contenedor .galeria como un contenedor flex, permitiendo la alineación y distribución de elementos hijos (imágenes).*/
+    flex-wrap: wrap; /*Permite que los elementos se envuelvan en varias líneas si no hay suficiente espacio en una sola línea.*/
+    justify-content: center;/*: Centra los elementos flexibles horizontalmente dentro del contenedor*/ 
+    gap: 10px; /*Establece un espacio de 10 píxeles entre cada imagen en la galería.*/
+    max-width: 800px;/*Limita el ancho máximo del contenedor a 800 píxeles.*/ 
+    margin: 0 auto; /*Centra el contenedor en la página al aplicar un margen automático a los lados.*/
+}
+.galeria img {
+    width: 23%; /*Establece el ancho de cada imagen en el 23% del contenedor, permitiendo que quepan aproximadamente cuatro imágenes en una fila*/
+    height: auto; /*Mantiene la proporción original de las imágenes, ajustando su altura automáticamente.*/
+    object-fit: cover;/*Asegura que las imágenes cubran completamente su área asignada, recortando el exceso si es necesario, sin distorsionarse*/ 
+}
+
+.galeria img {
+    border-radius: 5px;/* Aplica bordes redondeados a las imágenes, dándoles un aspecto más suave.*/
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);/*Agrega una sombra sutil debajo de las imágenes para darles profundidad.*/
+    transition: all 0.3s ease;/*Permite que cualquier cambio de estilo (como efectos de hover) sea suave durante 0.3 segundos.*/
+}
+
+@media (max-width: 768px/* Inicia una consulta de medios para aplicar estilos a dispositivos con un ancho máximo de 768 píxeles */) {
+    .galeria img {
+        width: 48%;/*Cambia el ancho de las imágenes al 48%, permitiendo que se muestren dos imágenes por fila.*/ 
+    }
+}
+
+@media (max-width: 480px/*Inicia una consulta de medios para dispositivos con un ancho máximo de 480 píxeles (generalmente móviles).*/) {
+    .galeria img {
+        width: 95%;/*Cambia el ancho de las imágenes al 95%, haciendo que ocupen casi todo el ancho del contenedor para mejorar la legibilidad en pantallas pequeñas.*/ 
+    }
+}
